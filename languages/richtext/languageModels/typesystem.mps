@@ -129,6 +129,15 @@
         </node>
       </node>
     </node>
+    <node role="descriptionBlock" roleId="tpd4.1216391046856" type="tpd4.QuickFixDescriptionBlock" typeId="tpd4.1216390987552" id="3868187941957806864">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3868187941957806865">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3868187941957806866">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3868187941957806867">
+            <property name="value" nameId="tpee.1070475926801" value="Normalize Text Structure" />
+          </node>
+        </node>
+      </node>
+    </node>
   </root>
   <root id="842294157794129094">
     <node role="executeBlock" roleId="tpd4.1216383424566" type="tpd4.QuickFixExecuteBlock" typeId="tpd4.1216383287005" id="842294157794129095">
