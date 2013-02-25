@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="de.slisson.mps.richtext" uuid="92d2ea16-5a42-4fdf-a676-c7604efe3504" doNotGenerateAdapters="true">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels/runtime.mps" />
+    <modelRoot path="${language_descriptor}/models" />
     <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels />
