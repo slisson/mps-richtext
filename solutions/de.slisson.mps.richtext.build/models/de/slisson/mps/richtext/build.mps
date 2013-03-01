@@ -11,7 +11,7 @@
   <import index="kdzh" modelUID="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" version="1" implicit="yes" />
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="1671983567912265676">
-      <property name="name" nameId="tpck.1169194664001" value="de.slisson.mps.richtext" />
+      <property name="name" nameId="tpck.1169194664001" value="mps-richtext" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../" />
     </node>
   </roots>
