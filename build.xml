@@ -25,9 +25,9 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}" />
     <mkdir dir="${build.tmp}/default/mps-richtext.zip" />
-    <mkdir dir="${build.tmp}/default/mps-richtext.zip/de.slisson.mps.richtext" />
-    <mkdir dir="${build.tmp}/default/mps-richtext.zip/de.slisson.mps.richtext/META-INF" />
-    <echoxml file="${build.tmp}/default/mps-richtext.zip/de.slisson.mps.richtext/META-INF/plugin.xml">
+    <mkdir dir="${build.tmp}/default/mps-richtext.zip/mps-richtext" />
+    <mkdir dir="${build.tmp}/default/mps-richtext.zip/mps-richtext/META-INF" />
+    <echoxml file="${build.tmp}/default/mps-richtext.zip/mps-richtext/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>de.slisson.mps.richtext</id>
         <name>MPS Richtext Editor Component</name>
@@ -42,8 +42,8 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/mps-richtext.zip/de.slisson.mps.richtext/languages" />
-    <mkdir dir="${build.tmp}/default/mps-richtext.zip/de.slisson.mps.richtext/languages/mps-richtext" />
+    <mkdir dir="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages" />
+    <mkdir dir="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext" />
     <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.jar" />
     <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.jar/META-INF" />
     <echoxml file="${build.tmp}/default/de.slisson.mps.richtext.jar/META-INF/module.xml">
@@ -66,12 +66,12 @@
         <sources jar="de.slisson.mps.richtext-src.jar" descriptor="richtext.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mps-richtext.zip/de.slisson.mps.richtext/languages/mps-richtext/de.slisson.mps.richtext.jar">
+    <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.jar">
       <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext" />
       <fileset dir="${basedir}/languages/richtext" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/de.slisson.mps.richtext.jar" />
     </jar>
-    <jar destfile="${build.tmp}/default/mps-richtext.zip/de.slisson.mps.richtext/languages/mps-richtext/de.slisson.mps.richtext-src.jar">
+    <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext-src.jar">
       <fileset dir="${basedir}/languages/richtext/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/languages/richtext/richtext.mpl" prefix="module" />
       <zipfileset dir="${basedir}/languages/richtext/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />

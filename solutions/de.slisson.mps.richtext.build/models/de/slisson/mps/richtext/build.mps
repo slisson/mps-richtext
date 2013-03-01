@@ -71,7 +71,7 @@
       </node>
       <node role="containerName" roleId="kdzh.6592112598314855574" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1671983567912265700">
         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1671983567912265701">
-          <property name="text" nameId="3ior.4903714810883755350" value="de.slisson.mps.richtext" />
+          <property name="text" nameId="3ior.4903714810883755350" value="mps-richtext" />
         </node>
       </node>
       <node role="vendor" roleId="kdzh.7832771629084912518" type="kdzh.BuildMps_IdeaPluginVendor" typeId="kdzh.7832771629084799699" id="1671983567912265715">
