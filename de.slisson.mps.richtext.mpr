@@ -22,9 +22,32 @@
     <projectModules>
       <modulePath path="${project}/languages/javadoc/javadoc.mpl" folder="" />
       <modulePath path="${project}/languages/richtext/richtext.mpl" />
+      <modulePath path="${project}/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" />
       <modulePath path="${project}/solutions/de.slisson.mps.richtext.sandbox/de.slisson.mps.richtext.sandbox.msd" />
     </projectModules>
     <genConfs />
+  </component>
+  <component name="ProjectLibraryManager">
+    <option name="libraries">
+      <map>
+        <entry key="multiline">
+          <value>
+            <Library>
+              <option name="name" value="multiline" />
+              <option name="path" value="${lisson.home}/mps-multiline" />
+            </Library>
+          </value>
+        </entry>
+        <entry key="overwrite">
+          <value>
+            <Library>
+              <option name="name" value="overwrite" />
+              <option name="path" value="${lisson.home}/mps-editor-override" />
+            </Library>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="ProjectModuleManager">
     <modules />
