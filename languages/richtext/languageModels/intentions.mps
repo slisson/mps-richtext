@@ -16,7 +16,6 @@
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="5500395430674355060">
       <property name="name" nameId="tpck.1169194664001" value="Text_Normalize" />
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="base" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="87nw.2557074442922380897" resolveInfo="Text" />
     </node>
   </roots>
