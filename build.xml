@@ -4,9 +4,10 @@
   <property name="build.tmp" location="${build.dir}/tmp/mps-richtext" />
   <property name="build.layout" location="${build.dir}/artifacts/mps-richtext" />
   <property name="mps_home" location="" />
+  <property name="deps" location="${basedir}/deps" />
   <property name="artifacts.buildMPS" location="${mps_home}" />
-  <property name="artifacts.mps-multiline" location="../mps-multiline/build/artifacts/mps-multiline" />
-  <property name="artifacts.mps-editor-override" location="../mps-editor-override/build/artifacts/mps-editor-override" />
+  <property name="artifacts.mps-multiline" location="${deps}" />
+  <property name="artifacts.mps-editor-override" location="${deps}" />
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
   <property name="buildMPS.date" value="${import.buildMPS.buildMPS.date}" />
@@ -101,11 +102,6 @@
       <fileset dir="${build.tmp}/default/mps-richtext.zip" />
     </zip>
     <echo file="${build.layout}/build.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.date=${buildMPS.date}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${buildMPS.idea.platform.build.number}${line.separator}buildCore.version=${buildCore.version}</echo>
-  </target>
-  
-  <target name="buildDependents">
-    <ant antfile="../mps-multiline/build.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="../mps-editor-override/build.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies">
