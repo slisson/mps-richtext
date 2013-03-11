@@ -33,6 +33,7 @@
         <name>MPS Richtext Editor Component</name>
         <version>0.0.1</version>
         <vendor url="https://github.com/slisson/mps-richtext">Sascha Lisson</vendor>
+        <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.core</depends>
         <depends>de.slisson.mps.editor.multiline</depends>
         <depends>de.slisson.mps.editor.override</depends>
@@ -44,6 +45,24 @@
     </echoxml>
     <mkdir dir="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages" />
     <mkdir dir="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext" />
+    <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.build.jar" />
+    <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.build.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/de.slisson.mps.richtext.build.jar/META-INF/module.xml">
+      <module namespace="de.slisson.mps.richtext.build" type="solution" uuid="830041d3-fd09-4005-819d-9d2e06a676ba">
+        <dependencies />
+        <sources jar="de.slisson.mps.richtext.build-src.jar" descriptor="de.slisson.mps.richtext.build.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.build.jar">
+      <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext.build" />
+      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/de.slisson.mps.richtext.build.jar" />
+    </jar>
+    <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.build-src.jar">
+      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" includes="**/*.java" />
+      <zipfileset file="${basedir}/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" prefix="module" />
+      <zipfileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.jar" />
     <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.jar/META-INF" />
     <echoxml file="${build.tmp}/default/de.slisson.mps.richtext.jar/META-INF/module.xml">
@@ -103,7 +122,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.de.slisson.mps.richtext" />
+  <target name="compileJava" depends="java.compile.de.slisson.mps.richtext.build, java.compile.de.slisson.mps.richtext" />
   
   <target name="processResources" />
   
@@ -112,6 +131,20 @@
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
+  
+  <target name="java.compile.de.slisson.mps.richtext.build" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext.build" />
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.build" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/mps-editor-override.build.jar" />
+        <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/mps-multiline.build.jar" />
+      </classpath>
+    </javac>
+  </target>
   
   <target name="java.compile.de.slisson.mps.richtext" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext" />
@@ -163,6 +196,7 @@
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
+      <plugin path="${artifacts.buildMPS}/plugins/mps-build" />
       <plugin path="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override" />
       <plugin path="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline" />
       <library file="${artifacts.buildMPS}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -228,16 +262,26 @@
       <library file="${artifacts.buildMPS}/lib/mps-platform.jar" />
       <library file="${artifacts.buildMPS}/lib/mps-tuples.jar" />
       <library file="${artifacts.buildMPS}/lib/mps-workbench.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.build.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/de.slisson.mps.editor.override.jar" />
+      <library file="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/mps-editor-override.build.jar" />
       <library file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.jar" />
       <library file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.runtime.jar" />
+      <library file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/mps-multiline.build.jar" />
       <chunk>
         <module file="${basedir}/languages/richtext/richtext.mpl" />
+        <module file="${basedir}/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" />
       </chunk>
     </generate>
   </target>
   
   <target name="cleanSources">
     <delete dir="${basedir}/languages/richtext/source_gen" />
+    <delete dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
   </target>
 </project>
