@@ -96,6 +96,7 @@
       <zipfileset file="${basedir}/languages/richtext/richtext.mpl" prefix="module" />
       <zipfileset dir="${basedir}/languages/richtext/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
       <zipfileset dir="${basedir}/languages/richtext/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
+      <zipfileset dir="${basedir}/languages/richtext/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <zip destfile="${build.layout}/mps-richtext.zip">
       <fileset dir="${build.tmp}/default/mps-richtext.zip" />
