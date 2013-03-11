@@ -37,6 +37,15 @@
     <node role="createRootRule" roleId="tpf8.1167088157977" type="tpf8.CreateRootRule" typeId="tpf8.1167087469898" id="1212807527450971253">
       <link role="templateNode" roleId="tpf8.1167087469901" targetNodeId="1212807527450971254" resolveInfo="EnrichmentActions" />
       <link role="label" roleId="tpf8.1200923511980" targetNodeId="1212807527450971261" resolveInfo="enrichmentClass" />
+      <node role="conditionFunction" roleId="tpf8.1167087469900" type="tpf8.CreateRootRule_Condition" typeId="tpf8.1167087518662" id="1493373660098807399">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1493373660098807400">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1493373660098888974">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1493373660098888975">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
   <root id="1212807527450963169">
