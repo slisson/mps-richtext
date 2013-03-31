@@ -22,14 +22,24 @@
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="p95z.JavadocComment" typeId="p95z.257181264606056851" id="842294157793890503">
       <node role="text" roleId="p95z.257181264606056854" type="87nw.Text" typeId="87nw.2557074442922380897" id="5272591907648689325">
         <node role="words" roleId="87nw.2557074442922392302" type="87nw.Word" typeId="87nw.2557074442922438156" id="5272591907648689327">
-          <property name="escapedValue" nameId="87nw.2557074442922438158" value="A collection designed for holding elements prior to processing.\nBesides basic " />
+          <property name="escapedValue" nameId="87nw.2557074442922438158" value="A collection designe" />
+        </node>
+        <node role="words" roleId="87nw.2557074442922392302" type="p95z.BoldText" typeId="p95z.257181264606021596" id="8492313630443949069">
+          <node role="text" roleId="p95z.5387542033452750706" type="87nw.Text" typeId="87nw.2557074442922380897" id="8492313630443949070">
+            <node role="words" roleId="87nw.2557074442922392302" type="87nw.Word" typeId="87nw.2557074442922438156" id="8492313630443949071">
+              <property name="escapedValue" nameId="87nw.2557074442922438158" value="d for holding ele" />
+            </node>
+          </node>
+        </node>
+        <node role="words" roleId="87nw.2557074442922392302" type="87nw.Word" typeId="87nw.2557074442922438156" id="8492313630443949068">
+          <property name="escapedValue" nameId="87nw.2557074442922438158" value="ments prior to processing.\nBesides basic " />
         </node>
         <node role="words" roleId="87nw.2557074442922392302" type="p95z.LinkTag" typeId="p95z.842294157794147083" id="5272591907648689362">
           <property name="displayText" nameId="p95z.842294157794147104" value="Collection" />
           <link role="target" roleId="p95z.842294157794147106" targetNodeId="k7g3.~Collection" resolveInfo="Collection" />
         </node>
         <node role="words" roleId="87nw.2557074442922392302" type="87nw.Word" typeId="87nw.2557074442922438156" id="5272591907648689333">
-          <property name="escapedValue" nameId="87nw.2557074442922438158" value=" operations,\nqueues provide additional insertion, extraction, and inspection\noperations.  Each of these methods exists in two forms: one throws\nan exception if the operation fails, the other returns a special\nvalue (either &lt;tt&gt;null&lt;/tt&gt; or &lt;tt&gt;false&lt;/tt&gt;, depending on the\noperation).  The latter form of the insert operation is designed\nspecifically for use with capacity-restricted &lt;tt&gt;Queue&lt;/tt&gt;\nimplementations; in most implementations, insert operations cannot\nfail.\n\n&lt;p&gt;\n&lt;table BORDER CELLPADDING=3 CELLSPACING=1&gt;\n &lt;tr&gt;\n   &lt;td&gt;&lt;/td&gt;\n   &lt;td ALIGN=CENTER&gt;&lt;em&gt;Throws exception&lt;/em&gt;&lt;/td&gt;\n   &lt;td ALIGN=CENTER&gt;&lt;em&gt;Returns special value&lt;/em&gt;&lt;/td&gt;\n &lt;/tr&gt;\n &lt;tr&gt;\n   &lt;td&gt;" />
+          <property name="escapedValue" nameId="87nw.2557074442922438158" value=" operations,\nqueues provide additional insertion, extraction, and inspection\noperations.  Each of these methods exists in two forms: one throws\nan exception if the operation fails, the other returns a special\nvalue (either &lt;tt&gt;null&lt;\/tt&gt; or &lt;tt&gt;false&lt;\/tt&gt;, depending on the\noperation).  The latter form of the insert operation is deion fails, the other returns a special\nvalue (either &lt;tt&gt;null&lt;\/tt&gt; or &lt;tt&gt;false&lt;\/tt&gt;, depending on the\noperation).  The latter form of the insert operation is designed\nspecifically for use with capacity-restricted &lt;tt&gt;Queue&lt;\/tt&gt;\nimplementations; in most implementations, insert operations cannot\nfail.\n\n&lt;p&gt;\n&lt;table BORDER CELLPADDING=3 CELLSPACING=1&gt;\n &lt;tr&gt;\n   &lt;td&gt;&lt;\/td&gt;\n   &lt;td ALIGN=CENTER&gt;&lt;em&gt;Throws exception&lt;\/em&gt;&lt;\/td&gt;\n   &lt;td ALIGN=CENTER&gt;&lt;em&gt;Returns special value&lt;\/em&gt;&lt;\/td&gt;\n &lt;\/tr&gt;\n &lt;tr&gt;\n   &lt;td&gt;" />
         </node>
         <node role="words" roleId="87nw.2557074442922392302" type="p95z.BoldText" typeId="p95z.257181264606021596" id="5272591907648689359">
           <node role="text" roleId="p95z.5387542033452750706" type="87nw.Text" typeId="87nw.2557074442922380897" id="5272591907648689360">
