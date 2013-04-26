@@ -4,10 +4,11 @@
   <property name="build.tmp" location="${build.dir}/tmp/mps-richtext" />
   <property name="build.layout" location="${build.dir}/artifacts/mps-richtext" />
   <property name="mps_home" location="" />
-  <property name="deps" location="${basedir}/deps" />
+  <property name="richtext.artifacts" location="" />
+  <property name="multiline.artifacts" location="" />
   <property name="artifacts.buildMPS" location="${mps_home}" />
-  <property name="artifacts.mps-multiline" location="${deps}" />
-  <property name="artifacts.mps-editor-override" location="${deps}" />
+  <property name="artifacts.mps-multiline" location="${multiline.artifacts}" />
+  <property name="artifacts.mps-editor-override" location="${richtext.artifacts}" />
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
   <property name="buildMPS.date" value="${import.buildMPS.buildMPS.date}" />
@@ -160,6 +161,7 @@
         <fileset file="${artifacts.buildMPS}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildMPS}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildMPS}/lib/commons-lang-2.4.jar" />
+        <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/lib/diff_match_patch.jar" />
         <fileset file="${artifacts.buildMPS}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.buildMPS}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.buildMPS}/lib/jdom.jar" />
