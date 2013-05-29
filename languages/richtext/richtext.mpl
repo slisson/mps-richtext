@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="de.slisson.mps.richtext" uuid="92d2ea16-5a42-4fdf-a676-c7604efe3504" doNotGenerateAdapters="true">
+<language namespace="de.slisson.mps.richtext" uuid="92d2ea16-5a42-4fdf-a676-c7604efe3504" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${language_descriptor}/models" />
-    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator name="" generatorUID="de.slisson.mps.richtext#1212807527450963095" uuid="b14c57f5-24bf-4ea0-a408-715a6a32c6a9">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/template" />
+        </modelRoot>
       </models>
       <external-templates />
       <usedLanguages>
@@ -23,6 +27,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
@@ -33,6 +38,7 @@
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)</dependency>
     <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
+    <dependency reexport="false">af475b0c-72e2-4133-9bc7-2e20f1acd8e1(org.apache.commons.lang)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>31c91def-a131-41a1-9018-102874f49a12(de.slisson.mps.editor.multiline)</usedLanguage>

@@ -20,10 +20,10 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/javadoc/javadoc.mpl" folder="" />
-      <modulePath path="${project}/languages/richtext/richtext.mpl" />
-      <modulePath path="${project}/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" />
-      <modulePath path="${project}/solutions/de.slisson.mps.richtext.sandbox/de.slisson.mps.richtext.sandbox.msd" />
+      <modulePath path="$PROJECT_DIR$/languages/javadoc/javadoc.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/richtext/richtext.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/de.slisson.mps.richtext.sandbox/de.slisson.mps.richtext.sandbox.msd" folder="" />
     </projectModules>
     <genConfs />
   </component>
@@ -54,7 +54,7 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="ProjectVersion">
-    <option name="version" value="2.5" />
+    <option name="version" value="3.0" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
