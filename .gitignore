@@ -3,6 +3,6 @@ classes_gen.caches/
 source_gen/
 source_gen.caches/
 *.class
-*.iws
+.mps/workspace.xml
 /build/tmp/*
 /build/artifacts/*
