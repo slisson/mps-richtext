@@ -3,12 +3,12 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/mps-richtext" />
   <property name="build.layout" location="${build.dir}/artifacts/mps-richtext" />
-  <property name="mps_home" location="" />
-  <property name="richtext.artifacts" location="" />
-  <property name="multiline.artifacts" location="" />
-  <property name="artifacts.mps" location="${mps_home}" />
+  <property name="mps.home" location="${basedir}/../../../../../../../Applications/MPS30.app" />
+  <property name="editor-override.artifacts" location="${basedir}/../mps-editor-override/build/artifacts/mps-editor-override/" />
+  <property name="multiline.artifacts" location="${basedir}/../mps-multiline/build/artifacts/mps-multiline/" />
+  <property name="artifacts.mps" location="${mps.home}" />
   <property name="artifacts.mps-multiline" location="${multiline.artifacts}" />
-  <property name="artifacts.mps-editor-override" location="${richtext.artifacts}" />
+  <property name="artifacts.mps-editor-override" location="${editor-override.artifacts}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
   <property name="mps.date" value="${import.mps.mps.date}" />
@@ -125,10 +125,10 @@
   <target name="buildDependents" />
   
   <target name="fetchDependencies">
-    <mkdir dir="${build.tmp}/deps/mps-multiline/mps-multiline.zip" />
-    <unzip src="${artifacts.mps-multiline}/mps-multiline.zip" dest="${build.tmp}/deps/mps-multiline/mps-multiline.zip" />
     <mkdir dir="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip" />
     <unzip src="${artifacts.mps-editor-override}/mps-editor-override.zip" dest="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip" />
+    <mkdir dir="${build.tmp}/deps/mps-multiline/mps-multiline.zip" />
+    <unzip src="${artifacts.mps-multiline}/mps-multiline.zip" dest="${build.tmp}/deps/mps-multiline/mps-multiline.zip" />
   </target>
   
   <target name="build" depends="assemble, check" />
