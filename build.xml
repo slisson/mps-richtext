@@ -229,6 +229,9 @@
         <module file="${basedir}/languages/richtext/richtext.mpl" />
         <module file="${basedir}/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   
@@ -239,6 +242,7 @@
   <target name="makeDependents" />
   
   <target name="java.compile.de.slisson.mps.richtext.build" depends="fetchDependencies">
+    <mkdir dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext.build" />
     <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.build" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -253,6 +257,7 @@
   </target>
   
   <target name="java.compile.de.slisson.mps.richtext" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/richtext/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext" />
     <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -300,6 +305,7 @@
   </target>
   
   <target name="java.compile.de.slisson.mps.richtext#1212807527450963095" depends="java.compile.de.slisson.mps.richtext, fetchDependencies">
+    <mkdir dir="${basedir}/languages/richtext/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095" />
     <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
