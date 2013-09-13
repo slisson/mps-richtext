@@ -17,6 +17,12 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="87nw.2557074442922380897" resolveInfo="Text" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="1481441403220134383" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="javadocComment" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="1481441403220159165" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="842294157794129797" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SeeClassTag" />
