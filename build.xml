@@ -4,11 +4,9 @@
   <property name="build.tmp" location="${build.dir}/tmp/mps-richtext" />
   <property name="build.layout" location="${build.dir}/artifacts/mps-richtext" />
   <property name="mps.home" location="${basedir}/../../../../../../../Applications/MPS30.app" />
-  <property name="editor-override.artifacts" location="${basedir}/../mps-editor-override/build/artifacts/mps-editor-override/" />
   <property name="multiline.artifacts" location="${basedir}/../mps-multiline/build/artifacts/mps-multiline/" />
   <property name="artifacts.mps" location="${mps.home}" />
   <property name="artifacts.mps-multiline" location="${multiline.artifacts}" />
-  <property name="artifacts.mps-editor-override" location="${editor-override.artifacts}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
   <property name="mps.date" value="${import.mps.mps.date}" />
@@ -37,7 +35,6 @@
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.core</depends>
         <depends>de.slisson.mps.editor.multiline</depends>
-        <depends>de.slisson.mps.editor.override</depends>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -116,6 +113,47 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-richtext-languageModels" prefix="module/languageModels" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-richtext-models" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.customcell.jar" />
+    <mkdir dir="${build.tmp}/default/de.slisson.mps.richtext.customcell.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/de.slisson.mps.richtext.customcell.jar/META-INF/module.xml">
+      <module namespace="de.slisson.mps.richtext.customcell" type="language" uuid="52733268-be24-4f5f-ab84-a73b7c0c03b0">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <sources jar="de.slisson.mps.richtext.customcell-src.jar" descriptor="de.slisson.richtext.customcell.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.customcell.jar">
+      <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/de.slisson.mps.richtext.customcell.jar" />
+    </jar>
+    <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.customcell-generator.jar">
+      <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-generator-template">
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-languageModels">
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.customcell-src.jar">
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/source_gen" includes="**/*.java" />
+      <zipfileset file="${basedir}/languages/de.slisson.richtext.customcell/de.slisson.richtext.customcell.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-generator-template" prefix="module/generator/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-languageModels" prefix="module/languageModels" />
+    </jar>
     <zip destfile="${build.layout}/mps-richtext.zip">
       <fileset dir="${build.tmp}/default/mps-richtext.zip" />
     </zip>
@@ -125,8 +163,6 @@
   <target name="buildDependents" />
   
   <target name="fetchDependencies">
-    <mkdir dir="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip" />
-    <unzip src="${artifacts.mps-editor-override}/mps-editor-override.zip" dest="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip" />
     <mkdir dir="${build.tmp}/deps/mps-multiline/mps-multiline.zip" />
     <unzip src="${artifacts.mps-multiline}/mps-multiline.zip" dest="${build.tmp}/deps/mps-multiline/mps-multiline.zip" />
   </target>
@@ -138,7 +174,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.de.slisson.mps.richtext.build, java.compile.de.slisson.mps.richtext, java.compile.de.slisson.mps.richtext#1212807527450963095" />
+  <target name="compileJava" depends="java.compile.de.slisson.mps.richtext.build, java.compile.de.slisson.mps.richtext, java.compile.de.slisson.mps.richtext#1212807527450963095, java.compile.de.slisson.mps.richtext.customcell, java.compile.de.slisson.mps.richtext.customcell#2490242408670609648" />
   
   <target name="processResources" />
   
@@ -153,7 +189,6 @@
     <generate parallelMode="true" fork="true">
       <plugin path="${artifacts.mps}/plugins/mps-build" />
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
-      <plugin path="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override" />
       <plugin path="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
@@ -220,14 +255,15 @@
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
       <library file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
-      <library file="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/de.slisson.mps.editor.override.jar" />
-      <library file="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/mps-editor-override.build.jar" />
       <library file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.jar" />
       <library file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.runtime.jar" />
       <library file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/mps-multiline.build.jar" />
       <chunk>
-        <module file="${basedir}/languages/richtext/richtext.mpl" />
         <module file="${basedir}/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" />
+        <module file="${basedir}/languages/de.slisson.richtext.customcell/de.slisson.richtext.customcell.mpl" />
+      </chunk>
+      <chunk>
+        <module file="${basedir}/languages/richtext/richtext.mpl" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -250,13 +286,12 @@
         <path location="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
       </src>
       <classpath>
-        <fileset file="${build.tmp}/deps/mps-editor-override/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/mps-editor-override.build.jar" />
         <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/mps-multiline.build.jar" />
       </classpath>
     </javac>
   </target>
   
-  <target name="java.compile.de.slisson.mps.richtext" depends="fetchDependencies">
+  <target name="java.compile.de.slisson.mps.richtext" depends="java.compile.de.slisson.mps.richtext.customcell, fetchDependencies">
     <mkdir dir="${basedir}/languages/richtext/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext" />
     <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext" fork="true" includeantruntime="false">
@@ -274,6 +309,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" />
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
@@ -291,13 +327,19 @@
         <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
@@ -347,9 +389,104 @@
     </javac>
   </target>
   
+  <target name="java.compile.de.slisson.mps.richtext.customcell" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/de.slisson.richtext.customcell/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" />
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/de.slisson.richtext.customcell/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.2.1.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.mps}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.de.slisson.mps.richtext.customcell#2490242408670609648" depends="java.compile.de.slisson.mps.richtext.customcell, fetchDependencies">
+    <mkdir dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" />
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.2.1.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.mps}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
   <target name="cleanSources">
+    <delete dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
+    <delete dir="${basedir}/languages/de.slisson.richtext.customcell/source_gen" />
     <delete dir="${basedir}/languages/richtext/source_gen" />
     <delete dir="${basedir}/languages/richtext/generator/source_gen" />
-    <delete dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
+    <delete dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" />
   </target>
 </project>
