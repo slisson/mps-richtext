@@ -126,6 +126,9 @@
         <property name="url" nameId="kdzh.7832771629084799701" value="https://github.com/slisson/mps-richtext" />
       </node>
     </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="103852046405659595" nodeInfo="ng">
+      <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="1671983567912265702" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps-richtext" />
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="4298465686077118656" nodeInfo="ng">

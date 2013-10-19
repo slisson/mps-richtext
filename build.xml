@@ -280,7 +280,7 @@
   <target name="java.compile.de.slisson.mps.richtext.build" depends="fetchDependencies">
     <mkdir dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext.build" />
-    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.build" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.build" fork="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
@@ -289,12 +289,15 @@
         <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/languages/mps-multiline/mps-multiline.build.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/de.slisson.mps.richtext.build">
+      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.de.slisson.mps.richtext" depends="java.compile.de.slisson.mps.richtext.customcell, fetchDependencies">
     <mkdir dir="${basedir}/languages/richtext/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext" />
-    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext" fork="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/richtext/source_gen" />
@@ -344,12 +347,15 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/de.slisson.mps.richtext">
+      <fileset dir="${basedir}/languages/richtext/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.de.slisson.mps.richtext#1212807527450963095" depends="java.compile.de.slisson.mps.richtext, fetchDependencies">
     <mkdir dir="${basedir}/languages/richtext/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095" />
-    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095" fork="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/richtext/generator/source_gen" />
@@ -387,12 +393,15 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095">
+      <fileset dir="${basedir}/languages/richtext/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.de.slisson.mps.richtext.customcell" depends="fetchDependencies">
     <mkdir dir="${basedir}/languages/de.slisson.richtext.customcell/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" />
-    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" fork="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/de.slisson.richtext.customcell/source_gen" />
@@ -433,12 +442,15 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell">
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="java.compile.de.slisson.mps.richtext.customcell#2490242408670609648" depends="java.compile.de.slisson.mps.richtext.customcell, fetchDependencies">
     <mkdir dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" />
-    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" fork="true" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" />
@@ -480,6 +492,9 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648">
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="cleanSources">
