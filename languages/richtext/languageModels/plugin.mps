@@ -316,7 +316,7 @@
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5740484903843212652" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="RichtextSelectionLocalHome" />
-    <property name="caption" nameId="tp4k.1205250923097" value="Select Richtext Llocal Home" />
+    <property name="caption" nameId="tp4k.1205250923097" value="Select Richtext Local Home" />
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="5740484903843212653" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5740484903843212654" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5740484903843212655" nodeInfo="nn">
@@ -446,7 +446,7 @@
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5740484903843233147" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="RichtextSelectionLocalEnd" />
-    <property name="caption" nameId="tp4k.1205250923097" value="Select Richtext Llocal Home" />
+    <property name="caption" nameId="tp4k.1205250923097" value="Select Richtext Local End" />
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="5740484903843233148" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5740484903843233149" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5740484903843233150" nodeInfo="nn">
