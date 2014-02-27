@@ -57,7 +57,7 @@
       <fileset dir="${build.tmp}/default/de.slisson.mps.richtext.build.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-de.slisson.mps.richtext.build-models">
-      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.build-src.jar">
       <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" includes="**/*.java" />
@@ -97,13 +97,13 @@
       <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-richtext-generator-template">
-      <fileset dir="${basedir}/languages/richtext/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/richtext/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-richtext-languageModels">
-      <fileset dir="${basedir}/languages/richtext/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/richtext/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-richtext-models">
-      <fileset dir="${basedir}/languages/richtext/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/richtext/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext-src.jar">
       <fileset dir="${basedir}/languages/richtext/generator/source_gen" includes="**/*.java" />
@@ -142,10 +142,10 @@
       <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-generator-template">
-      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-languageModels">
-      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.customcell-src.jar">
       <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" includes="**/*.java" />
@@ -316,11 +316,11 @@
         <pathelement path="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" />
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/lib/diff_match_patch.jar" />
         <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/lib/commons-lang3-3.1.jar" />
         <fileset file="${build.tmp}/deps/mps-multiline/mps-multiline.zip/mps-multiline/lib/commons-lang-2.6.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
@@ -374,8 +374,8 @@
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/de.slisson.mps.richtext" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
@@ -417,8 +417,8 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
@@ -467,8 +467,8 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/de.slisson.mps.richtext.customcell" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
