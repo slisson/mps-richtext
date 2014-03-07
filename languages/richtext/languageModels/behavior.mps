@@ -1243,12 +1243,20 @@
       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
       <property name="isStatic" nameId="1i04.5864038008284099149" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="getTransformKeys" />
-      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
+      <property name="isAbstract" nameId="1i04.1225194472834" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="9006904477154890018" nodeInfo="in">
         <node role="elementType" roleId="tp2q.1151689745422" type="tpee.StringType" typeId="tpee.1225271177708" id="9006904477154890023" nodeInfo="in" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9006904477154868759" nodeInfo="nn" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9006904477154868761" nodeInfo="sn" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="9006904477154868761" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4326967711042856966" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4326967711042856964" nodeInfo="nn">
+            <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="4326967711042858244" nodeInfo="nn">
+              <node role="elementType" roleId="tp2q.1224414456414" type="tpee.StringType" typeId="tpee.1225271177708" id="4326967711042858272" nodeInfo="in" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4433012599261204763" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4433012599261204764" nodeInfo="sn" />

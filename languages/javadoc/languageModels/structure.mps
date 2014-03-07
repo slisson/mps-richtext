@@ -70,6 +70,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="257181264606021596" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BoldText" />
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Bold Text" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;b&gt;" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="5387542033452750704" resolveInfo="HtmlTag" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5387542033452750700" nodeInfo="ig">
