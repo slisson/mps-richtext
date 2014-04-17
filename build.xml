@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/mps-richtext" />
   <property name="build.layout" location="${build.dir}/artifacts/mps-richtext" />
-  <property name="mps.home" location="${basedir}/../../../../../../../Applications/MPS30.app" />
+  <property name="mps.home" location="${basedir}/../../app/mps304" />
   <property name="multiline.artifacts" location="${basedir}/../mps-multiline/build/artifacts/mps-multiline/" />
   <property name="artifacts.mps" location="${mps.home}" />
   <property name="artifacts.mps-multiline" location="${multiline.artifacts}" />
@@ -30,7 +30,7 @@
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>de.slisson.mps.richtext</id>
         <name>MPS Richtext Editor Component</name>
-        <version>1.0</version>
+        <version>1.0.1</version>
         <vendor url="https://github.com/slisson/mps-richtext">Sascha Lisson</vendor>
         <depends>jetbrains.mps.build</depends>
         <depends>jetbrains.mps.core</depends>
@@ -57,7 +57,7 @@
       <fileset dir="${build.tmp}/default/de.slisson.mps.richtext.build.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-de.slisson.mps.richtext.build-models">
-      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.build-src.jar">
       <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" includes="**/*.java" />
@@ -97,13 +97,13 @@
       <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext#1212807527450963095" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-richtext-generator-template">
-      <fileset dir="${basedir}/languages/richtext/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/richtext/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-richtext-languageModels">
-      <fileset dir="${basedir}/languages/richtext/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/richtext/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-richtext-models">
-      <fileset dir="${basedir}/languages/richtext/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/richtext/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext-src.jar">
       <fileset dir="${basedir}/languages/richtext/generator/source_gen" includes="**/*.java" />
@@ -142,10 +142,10 @@
       <fileset dir="${build.tmp}/java/out/de.slisson.mps.richtext.customcell#2490242408670609648" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-generator-template">
-      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-languageModels">
-      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.customcell-src.jar">
       <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" includes="**/*.java" />
@@ -167,7 +167,7 @@
     <unzip src="${artifacts.mps-multiline}/mps-multiline.zip" dest="${build.tmp}/deps/mps-multiline/mps-multiline.zip" />
   </target>
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
@@ -268,6 +268,8 @@
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
+      <macro name="mps.home" path="${mps.home}" />
+      <macro name="multiline.artifacts" path="${multiline.artifacts}" />
     </generate>
   </target>
   
