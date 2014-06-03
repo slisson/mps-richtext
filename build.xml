@@ -60,7 +60,7 @@
       <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.build-src.jar">
-      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/solutions/de.slisson.mps.richtext.build/source_gen" />
       <zipfileset file="${basedir}/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-de.slisson.mps.richtext.build-models" prefix="module/models" />
     </jar>
@@ -106,8 +106,8 @@
       <fileset dir="${basedir}/languages/richtext/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext-src.jar">
-      <fileset dir="${basedir}/languages/richtext/generator/source_gen" includes="**/*.java" />
-      <fileset dir="${basedir}/languages/richtext/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/richtext/generator/source_gen" />
+      <fileset dir="${basedir}/languages/richtext/source_gen" />
       <zipfileset file="${basedir}/languages/richtext/richtext.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-richtext-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-richtext-languageModels" prefix="module/languageModels" />
@@ -148,8 +148,8 @@
       <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/mps-richtext.zip/mps-richtext/languages/mps-richtext/de.slisson.mps.richtext.customcell-src.jar">
-      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" includes="**/*.java" />
-      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/generator/source_gen" />
+      <fileset dir="${basedir}/languages/de.slisson.richtext.customcell/source_gen" />
       <zipfileset file="${basedir}/languages/de.slisson.richtext.customcell/de.slisson.richtext.customcell.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.slisson.richtext.customcell-languageModels" prefix="module/languageModels" />
