@@ -45,7 +45,6 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="5mdd.CellModel_CustomFactory" typeId="5mdd.2490242408670732052" id="917258312815016989" nodeInfo="ng">
       <node role="childCellModel" roleId="5mdd.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="917258312815016993" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="87nw.2557074442922392302" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="5745648783537068349" resolveInfo="amText" />
       </node>
       <node role="factoryMethod" roleId="5mdd.2490242408670937967" type="5mdd.QueryFunction_Cell" typeId="5mdd.1176749715029" id="917258312815016995" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="917258312815016996" nodeInfo="sn">
