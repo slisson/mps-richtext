@@ -5,7 +5,6 @@
       <modulePath path="$PROJECT_DIR$/languages/de.slisson.richtext.customcell/de.slisson.richtext.customcell.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/javadoc/javadoc.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/richtext/richtext.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/de.slisson.mps.richtext.build/de.slisson.mps.richtext.build.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/de.slisson.mps.richtext.sandbox/de.slisson.mps.richtext.sandbox.msd" folder="" />
     </projectModules>
   </component>
