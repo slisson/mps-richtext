@@ -2,6 +2,7 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="${mbeddr.github.core.home}/code/plugins/sl-all/mps-apache-commons/solutions/org.apache.commons/org.apache.commons.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/de.slisson.richtext.customcell/de.slisson.richtext.customcell.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/javadoc/javadoc.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/richtext/richtext.mpl" folder="" />
@@ -9,4 +10,3 @@
     </projectModules>
   </component>
 </project>
-

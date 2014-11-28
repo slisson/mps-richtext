@@ -7,7 +7,7 @@
           <value>
             <Library>
               <option name="name" value="multiline" />
-              <option name="path" value="${lisson.home}/mps-multiline" />
+              <option name="path" value="${mbeddr.github.core.home}/code/plugins/sl-all/mps-multiline" />
             </Library>
           </value>
         </entry>
@@ -15,7 +15,7 @@
           <value>
             <Library>
               <option name="name" value="overwrite" />
-              <option name="path" value="${lisson.home}/mps-editor-override" />
+              <option name="path" value="${mbeddr.github.core.home}/code/plugins/sl-all/mps-editor-override" />
             </Library>
           </value>
         </entry>
@@ -23,4 +23,3 @@
     </option>
   </component>
 </project>
-
