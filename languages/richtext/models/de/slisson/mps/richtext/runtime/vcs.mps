@@ -22,7 +22,8 @@
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="ajxo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" implicit="true" />
+    <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" implicit="true" />
+    <import index="srng" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" implicit="true" />
     <import index="tbr6" ref="r:6a005c26-87c0-43c4-8cf3-49ffba1099df(de.slisson.mps.richtext.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -390,12 +391,31 @@
         <node concept="3clFbH" id="6nUV0qFJ1Xm" role="3cqZAp" />
         <node concept="3clFbF" id="3gBYXhg3Ncg" role="3cqZAp">
           <node concept="2OqwBi" id="3gBYXhg3Nch" role="3clFbG">
-            <node concept="2YIFZM" id="3gBYXhg3Nci" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            <node concept="2OqwBi" id="7wXnfGE3zLN" role="2Oq$k0">
+              <node concept="2OqwBi" id="7wXnfGE3w1P" role="2Oq$k0">
+                <node concept="2OqwBi" id="7wXnfGE3uuL" role="2Oq$k0">
+                  <node concept="2OqwBi" id="7wXnfGE3rF5" role="2Oq$k0">
+                    <node concept="37vLTw" id="7wXnfGE3qNy" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3gBYXhg3NbF" resolve="cell" />
+                    </node>
+                    <node concept="liA8E" id="7wXnfGE3tQ0" role="2OqNvi">
+                      <ref role="37wK5l" to="jsgz:~EditorCell_Basic.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="7wXnfGE3voQ" role="2OqNvi">
+                    <ref role="37wK5l" to="srng:~EditorComponent.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="7wXnfGE3wYF" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="7wXnfGE3$Rc" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
             <node concept="liA8E" id="3gBYXhg3Ncj" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.requireRead(java.lang.Runnable):void" resolve="requireRead" />
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
               <node concept="1bVj0M" id="3gBYXhg3Nck" role="37wK5m">
                 <node concept="3clFbS" id="3gBYXhg3Ncl" role="1bW5cS">
                   <node concept="3cpWs8" id="3gBYXhg3NbR" role="3cqZAp">
