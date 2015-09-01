@@ -1479,9 +1479,14 @@
                       <ref role="3cqZAo" node="2xX7zRJRvey" resolve="buffer" />
                     </node>
                     <node concept="liA8E" id="2xX7zRJRx4a" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~StringBuffer.append(java.lang.Object):java.lang.StringBuffer" resolve="append" />
-                      <node concept="2GrUjf" id="2xX7zRJRx9u" role="37wK5m">
-                        <ref role="2Gs0qQ" node="2xX7zRJRvtz" resolve="word" />
+                      <ref role="37wK5l" to="e2lb:~StringBuffer.append(java.lang.String):java.lang.StringBuffer" resolve="append" />
+                      <node concept="2OqwBi" id="7diJr$RwFAA" role="37wK5m">
+                        <node concept="2GrUjf" id="2xX7zRJRx9u" role="2Oq$k0">
+                          <ref role="2Gs0qQ" node="2xX7zRJRvtz" resolve="word" />
+                        </node>
+                        <node concept="2qgKlT" id="7diJr$RwG7z" role="2OqNvi">
+                          <ref role="37wK5l" node="3Q5enzfMT4t" resolve="toTextString" />
+                        </node>
                       </node>
                     </node>
                   </node>
