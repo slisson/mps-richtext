@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model ref="r:276d01ed-a8f1-4a68-9983-8032b091d2b0(de.slisson.mps.richtext.runtime)">
   <persistence version="9" />
-  <attribute name="concise" value="true" />
   <languages>
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
     <import index="4ky7" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" />
@@ -18,10 +17,9 @@
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
     <import index="nu8v" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
-    <import index="v2t1" ref="f:java_stub#b0f8641f-bd77-4421-8425-30d9088a82f7#org.apache.commons.lang3(org.apache.commons/org.apache.commons.lang3@java_stub)" />
     <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="87nw" ref="r:ca2ab6bb-f6e7-4c0f-a88c-b78b9b31fff3(de.slisson.mps.richtext.structure)" implicit="true" />
     <import index="tbr6" ref="r:6a005c26-87c0-43c4-8cf3-49ffba1099df(de.slisson.mps.richtext.behavior)" implicit="true" />
@@ -115,7 +113,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -936,10 +934,9 @@
         <node concept="3cpWs8" id="5$KGdYF$ova" role="3cqZAp">
           <node concept="3cpWsn" id="5$KGdYF$ovb" role="3cpWs9">
             <property role="TrG5h" value="s1" />
-            <node concept="17QB3L" id="5$KGdYF$ovc" role="1tU5fm" />
-            <node concept="2YIFZM" id="5$KGdYF$ozM" role="33vP2m">
-              <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-              <ref role="37wK5l" to="v2t1:~StringUtils.substring(java.lang.String,int,int):java.lang.String" resolve="substring" />
+            <node concept="2YIFZM" id="5LEeV$4biPy" role="33vP2m">
+              <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+              <ref role="37wK5l" to="wtuq:5LEeV$496dG" resolve="safeSubstring" />
               <node concept="3cpWsa" id="5$KGdYF$o$E" role="37wK5m">
                 <ref role="3cqZAo" node="5$KGdYF$o$d" resolve="s" />
               </node>
@@ -950,15 +947,15 @@
                 <ref role="3cqZAo" node="5$KGdYF$otc" resolve="start" />
               </node>
             </node>
+            <node concept="17QB3L" id="5$KGdYF$ovc" role="1tU5fm" />
           </node>
         </node>
         <node concept="3cpWs8" id="5$KGdYF$ovi" role="3cqZAp">
           <node concept="3cpWsn" id="5$KGdYF$ovj" role="3cpWs9">
             <property role="TrG5h" value="s2" />
-            <node concept="17QB3L" id="5$KGdYF$ovk" role="1tU5fm" />
-            <node concept="2YIFZM" id="5$KGdYF$o$H" role="33vP2m">
-              <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-              <ref role="37wK5l" to="v2t1:~StringUtils.substring(java.lang.String,int,int):java.lang.String" resolve="substring" />
+            <node concept="2YIFZM" id="5LEeV$4bjb1" role="33vP2m">
+              <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+              <ref role="37wK5l" to="wtuq:5LEeV$496dG" resolve="safeSubstring" />
               <node concept="3cpWsa" id="5$KGdYF$o$I" role="37wK5m">
                 <ref role="3cqZAo" node="5$KGdYF$o$d" resolve="s" />
               </node>
@@ -974,6 +971,7 @@
                 </node>
               </node>
             </node>
+            <node concept="17QB3L" id="5$KGdYF$ovk" role="1tU5fm" />
           </node>
         </node>
         <node concept="3clFbF" id="5$KGdYF$ovK" role="3cqZAp">

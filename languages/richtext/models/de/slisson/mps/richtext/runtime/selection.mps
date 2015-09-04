@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model ref="r:3e994831-9e2b-4a2c-a757-02d48f0caeb5(de.slisson.mps.richtext.runtime.selection)">
   <persistence version="9" />
-  <attribute name="concise" value="true" />
   <languages>
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="654422bf-e75f-44dc-936d-188890a746ce" name="de.slisson.mps.reflection" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -30,13 +29,12 @@
     <import index="y596" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(MPS.Editor/jetbrains.mps.openapi.editor.selection@java_stub)" />
     <import index="8q6x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
-    <import index="v2t1" ref="f:java_stub#b0f8641f-bd77-4421-8425-30d9088a82f7#org.apache.commons.lang3(org.apache.commons/org.apache.commons.lang3@java_stub)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="tbr6" ref="r:6a005c26-87c0-43c4-8cf3-49ffba1099df(de.slisson.mps.richtext.behavior)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
     <import index="4lbv" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.update(MPS.Editor/jetbrains.mps.openapi.editor.update@java_stub)" implicit="true" />
     <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" implicit="true" />
-    <import index="tbr6" ref="r:6a005c26-87c0-43c4-8cf3-49ffba1099df(de.slisson.mps.richtext.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -201,7 +199,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -4949,9 +4947,9 @@
                     </node>
                     <node concept="2qgKlT" id="7nqK$2JOsrF" role="2OqNvi">
                       <ref role="37wK5l" to="tbr6:1JwC6U7zkKz" resolve="setText" />
-                      <node concept="2YIFZM" id="7nqK$2JOsrG" role="37wK5m">
-                        <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                        <ref role="37wK5l" to="v2t1:~StringUtils.substring(java.lang.String,int,int):java.lang.String" resolve="substring" />
+                      <node concept="2YIFZM" id="5LEeV$4bgij" role="37wK5m">
+                        <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+                        <ref role="37wK5l" to="wtuq:5LEeV$496dG" resolve="safeSubstring" />
                         <node concept="2OqwBi" id="7nqK$2JOsrH" role="37wK5m">
                           <node concept="3cpWsa" id="7nqK$2JOsrI" role="2Oq$k0">
                             <ref role="3cqZAo" node="7nqK$2JOqyR" resolve="lastWord" />
@@ -4993,9 +4991,9 @@
                     </node>
                     <node concept="2qgKlT" id="7nqK$2JOqz7" role="2OqNvi">
                       <ref role="37wK5l" to="tbr6:1JwC6U7zkKz" resolve="setText" />
-                      <node concept="2YIFZM" id="7nqK$2JOqz8" role="37wK5m">
-                        <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                        <ref role="37wK5l" to="v2t1:~StringUtils.substring(java.lang.String,int):java.lang.String" resolve="substring" />
+                      <node concept="2YIFZM" id="5LEeV$4bgH5" role="37wK5m">
+                        <ref role="37wK5l" to="wtuq:5LEeV$49mkR" resolve="safeSubstring" />
+                        <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
                         <node concept="2OqwBi" id="7nqK$2JOqz9" role="37wK5m">
                           <node concept="3cpWsa" id="7nqK$2JOqza" role="2Oq$k0">
                             <ref role="3cqZAo" node="7nqK$2JOqyK" resolve="firstWord" />
@@ -5034,9 +5032,9 @@
                       </node>
                       <node concept="2qgKlT" id="7nqK$2JOqzB" role="2OqNvi">
                         <ref role="37wK5l" to="tbr6:1JwC6U7zkKz" resolve="setText" />
-                        <node concept="2YIFZM" id="7nqK$2JOqzC" role="37wK5m">
-                          <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                          <ref role="37wK5l" to="v2t1:~StringUtils.substring(java.lang.String,int,int):java.lang.String" resolve="substring" />
+                        <node concept="2YIFZM" id="5LEeV$4bh61" role="37wK5m">
+                          <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+                          <ref role="37wK5l" to="wtuq:5LEeV$496dG" resolve="safeSubstring" />
                           <node concept="2OqwBi" id="7nqK$2JOqzD" role="37wK5m">
                             <node concept="3cpWsa" id="7nqK$2JOqzE" role="2Oq$k0">
                               <ref role="3cqZAo" node="7nqK$2JOqyK" resolve="firstWord" />
@@ -5066,9 +5064,9 @@
                       </node>
                       <node concept="2qgKlT" id="7nqK$2JOqzN" role="2OqNvi">
                         <ref role="37wK5l" to="tbr6:1JwC6U7zkKz" resolve="setText" />
-                        <node concept="2YIFZM" id="7nqK$2JOqzO" role="37wK5m">
-                          <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                          <ref role="37wK5l" to="v2t1:~StringUtils.substring(java.lang.String,int,int):java.lang.String" resolve="substring" />
+                        <node concept="2YIFZM" id="5LEeV$4bhwR" role="37wK5m">
+                          <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+                          <ref role="37wK5l" to="wtuq:5LEeV$496dG" resolve="safeSubstring" />
                           <node concept="2OqwBi" id="7nqK$2JOqzP" role="37wK5m">
                             <node concept="3cpWsa" id="7nqK$2JOqzQ" role="2Oq$k0">
                               <ref role="3cqZAo" node="7nqK$2JOqyR" resolve="lastWord" />
@@ -5200,20 +5198,36 @@
                       <node concept="3$u5V9" id="4WdkpBdiJk3" role="2OqNvi">
                         <node concept="1bVj0M" id="4WdkpBdiJk4" role="23t8la">
                           <node concept="3clFbS" id="4WdkpBdiJk5" role="1bW5cS">
-                            <node concept="3clFbF" id="4WdkpBdiJkM" role="3cqZAp">
-                              <node concept="2YIFZM" id="4WdkpBdiJkP" role="3clFbG">
-                                <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                                <ref role="37wK5l" to="v2t1:~StringUtils.defaultString(java.lang.String):java.lang.String" resolve="defaultString" />
-                                <node concept="2EnYce" id="4WdkpBdiJjh" role="37wK5m">
-                                  <node concept="1PxgMI" id="4WdkpBdiJiG" role="2Oq$k0">
+                            <node concept="3cpWs8" id="5LEeV$49xAo" role="3cqZAp">
+                              <node concept="3cpWsn" id="5LEeV$49xAp" role="3cpWs9">
+                                <property role="TrG5h" value="text" />
+                                <node concept="17QB3L" id="5LEeV$49xAh" role="1tU5fm" />
+                                <node concept="2EnYce" id="5LEeV$49xAq" role="33vP2m">
+                                  <node concept="1PxgMI" id="5LEeV$49xAr" role="2Oq$k0">
                                     <property role="1BlNFB" value="true" />
                                     <ref role="1PxNhF" to="87nw:2dWzqxEBBFG" resolve="IWord" />
-                                    <node concept="3cpWs2" id="4WdkpBdiJkb" role="1PxMeX">
+                                    <node concept="3cpWs2" id="5LEeV$49xAs" role="1PxMeX">
                                       <ref role="3cqZAo" node="4WdkpBdiJk6" resolve="it" />
                                     </node>
                                   </node>
-                                  <node concept="2qgKlT" id="4WdkpBdiJjd" role="2OqNvi">
+                                  <node concept="2qgKlT" id="5LEeV$49xAt" role="2OqNvi">
                                     <ref role="37wK5l" to="tbr6:3Q5enzfMT4t" resolve="toTextString" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3cpWs6" id="5LEeV$49A5Y" role="3cqZAp">
+                              <node concept="3K4zz7" id="5LEeV$49AA7" role="3cqZAk">
+                                <node concept="37vLTw" id="5LEeV$49AKx" role="3K4GZi">
+                                  <ref role="3cqZAo" node="5LEeV$49xAp" resolve="text" />
+                                </node>
+                                <node concept="Xl_RD" id="5LEeV$49AFd" role="3K4E3e">
+                                  <property role="Xl_RC" value="" />
+                                </node>
+                                <node concept="3clFbC" id="5LEeV$49AmR" role="3K4Cdx">
+                                  <node concept="10Nm6u" id="5LEeV$49Au$" role="3uHU7w" />
+                                  <node concept="37vLTw" id="5LEeV$49Aci" role="3uHU7B">
+                                    <ref role="3cqZAo" node="5LEeV$49xAp" resolve="text" />
                                   </node>
                                 </node>
                               </node>
@@ -5462,11 +5476,11 @@
         </node>
       </node>
       <node concept="P$JXv" id="7nqK$2JO4F0" role="lGtFl">
-        <node concept="TZ5HA" id="7nqK$2JO4F1" role="TZ5H$">
-          <node concept="1dT_AC" id="7nqK$2JO4F2" role="1dT_Ay" />
-        </node>
         <node concept="x79VA" id="7nqK$2JO4F3" role="3nqlJM">
           <property role="x79VB" value="the replaced IWords" />
+        </node>
+        <node concept="TZ5HA" id="7nqK$2JO4F1" role="TZ5H$">
+          <node concept="1dT_AC" id="7nqK$2JO4F2" role="1dT_Ay" />
         </node>
       </node>
     </node>
@@ -8308,6 +8322,7 @@
       <node concept="10Oyi0" id="6Y0V2RJtSIX" role="3clF45" />
       <node concept="3Tm6S6" id="6Y0V2RJuvHO" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="5LEeV$48GPK" role="jymVt" />
   </node>
   <node concept="312cEu" id="7j0yJED1RC1">
     <property role="TrG5h" value="CaretPosition" />

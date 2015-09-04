@@ -17,9 +17,9 @@
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="to5d" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" />
     <import index="nu8v" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
-    <import index="v2t1" ref="f:java_stub#b0f8641f-bd77-4421-8425-30d9088a82f7#org.apache.commons.lang3(org.apache.commons/org.apache.commons.lang3@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="ajxo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+    <import index="wtuq" ref="r:ebe120ba-74f3-4913-8ba8-dc7299e610f9(de.slisson.mps.richtext.util)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" implicit="true" />
     <import index="srng" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" implicit="true" />
@@ -118,7 +118,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -948,8 +948,8 @@
                                                 <ref role="3cqZAo" node="3gBYXhg3RQh" resolve="diffText" />
                                               </node>
                                               <node concept="2YIFZM" id="3gBYXhg3PjN" role="37vLTx">
-                                                <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                                                <ref role="37wK5l" to="v2t1:~StringUtils.substringAfter(java.lang.String,java.lang.String):java.lang.String" resolve="substringAfter" />
+                                                <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+                                                <ref role="37wK5l" to="wtuq:5LEeV$4brlk" resolve="substringAfter" />
                                                 <node concept="3cpWsa" id="3gBYXhg3RRQ" role="37wK5m">
                                                   <ref role="3cqZAo" node="3gBYXhg3RQh" resolve="diffText" />
                                                 </node>
@@ -1048,8 +1048,8 @@
                                                 <ref role="3cqZAo" node="3gBYXhg3RQh" resolve="diffText" />
                                               </node>
                                               <node concept="2YIFZM" id="3gBYXhg3Pp6" role="37vLTx">
-                                                <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                                                <ref role="37wK5l" to="v2t1:~StringUtils.substringBefore(java.lang.String,java.lang.String):java.lang.String" resolve="substringBefore" />
+                                                <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+                                                <ref role="37wK5l" to="wtuq:5LEeV$4bIi4" resolve="substringBefore" />
                                                 <node concept="3cpWsa" id="3gBYXhg3RRW" role="37wK5m">
                                                   <ref role="3cqZAo" node="3gBYXhg3RQh" resolve="diffText" />
                                                 </node>
@@ -1520,8 +1520,8 @@
                                                 <ref role="3cqZAo" node="6nUV0qFINUn" resolve="diffText" />
                                               </node>
                                               <node concept="2YIFZM" id="6nUV0qFINUJ" role="37vLTx">
-                                                <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                                                <ref role="37wK5l" to="v2t1:~StringUtils.substringAfter(java.lang.String,java.lang.String):java.lang.String" resolve="substringAfter" />
+                                                <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+                                                <ref role="37wK5l" to="wtuq:5LEeV$4brlk" resolve="substringAfter" />
                                                 <node concept="3cpWsa" id="6nUV0qFINUK" role="37wK5m">
                                                   <ref role="3cqZAo" node="6nUV0qFINUn" resolve="diffText" />
                                                 </node>
@@ -1620,8 +1620,8 @@
                                                 <ref role="3cqZAo" node="6nUV0qFINUn" resolve="diffText" />
                                               </node>
                                               <node concept="2YIFZM" id="6nUV0qFINVo" role="37vLTx">
-                                                <ref role="1Pybhc" to="v2t1:~StringUtils" resolve="StringUtils" />
-                                                <ref role="37wK5l" to="v2t1:~StringUtils.substringBefore(java.lang.String,java.lang.String):java.lang.String" resolve="substringBefore" />
+                                                <ref role="1Pybhc" to="wtuq:4$G0AukZNCp" resolve="RichtextUtil" />
+                                                <ref role="37wK5l" to="wtuq:5LEeV$4bIi4" resolve="substringBefore" />
                                                 <node concept="3cpWsa" id="6nUV0qFINVp" role="37wK5m">
                                                   <ref role="3cqZAo" node="6nUV0qFINUn" resolve="diffText" />
                                                 </node>
